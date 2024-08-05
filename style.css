@@ -14,7 +14,7 @@ body, html {
     overflow: hidden;
 }
 #gameCanvas {
-    background-color: #2e204b;
+    background-color: #040018;
 }
 #gameOverScreen {
     display: none;
@@ -22,15 +22,47 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #130d1f;
+    background-color: #000e01;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    color: white;
+    color: rgb(0, 221, 0);
+    border: 3px solid rgb(0, 221, 0);
 }
 #gameOverScreen button {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background-color: rgb(0, 221, 0);
+    border: none;
+    border-radius: 20px;
+    color: rgb(0, 51, 0);
+}
+
+#madeByLeo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: #00dd00;
+    border: 2px solid #00dd00;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#madeByLeo:hover {
+    background-color: rgba(0, 221, 0, 0.1);
+}
+
+#madeByLeo svg {
+    margin-right: 8px;
+    fill: #00dd00;
 }

@@ -8,10 +8,10 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const rocketUpImage = new Image();
-rocketUpImage.src = 'rocket_up.png';
+rocketUpImage.src = './assets/rocket_up.png';
 
 const rocketDownImage = new Image();
-rocketDownImage.src = 'rocket_down.png';
+rocketDownImage.src = './assets/rocket_down.png';
 
 let rocket = {
     x: 500,
@@ -82,7 +82,7 @@ function updatePipes() {
 }
 
 function checkCollision() {
-    const collisionMargin = 10; // Ajuste este valor conforme necessário
+    const collisionMargin = 10;
     
     pipes.forEach(pipe => {
         if (rocket.x + collisionMargin < pipe.x + pipeWidth &&
@@ -119,7 +119,9 @@ function resetGame() {
 function drawScore() {
     ctx.fillStyle = 'white';
     ctx.font = '24px Arial';
+    ctx.fillStyle = "rgb(0, 221, 0)";
     ctx.fillText(`Pontuação: ${score}`, 10, 25);
+    ctx.fillStyle = "rgb(0, 221, 0)";
     ctx.fillText(`Recorde: ${bestScore}`, 10, 55);
 }
 
