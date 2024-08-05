@@ -82,10 +82,16 @@ function updatePipes() {
 }
 
 function checkCollision() {
+    const collisionMargin = 10; // Ajuste este valor conforme necessário
+    
     pipes.forEach(pipe => {
-        if (rocket.x < pipe.x + pipeWidth && rocket.x + rocket.width > pipe.x &&
-            (rocket.y < pipe.top || rocket.y + rocket.height > canvas.height - pipe.bottom)) {
-            endGame();
+        if (rocket.x + collisionMargin < pipe.x + pipeWidth &&
+            rocket.x + rocket.width - collisionMargin > pipe.x) {
+            
+            if (rocket.y + collisionMargin < pipe.top || 
+                rocket.y + rocket.height - collisionMargin > canvas.height - pipe.bottom) {
+                endGame();
+            }
         }
     });
 }
